@@ -15,8 +15,23 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('login', function () {
+    return view('welcome');
+});
+
 Route::get('/foo', function () {
     return 'Hello World';
 });
 
 Route::get('user/{id}', 'UserController@show');
+
+
+
+Route::view('/register/', 'RegisterForm');
+
+Route::post('/register/insert/', 'RegisterController@insert');
+
+
+/*Route::post('/register/', function(){
+    return "ok";
+});*/
