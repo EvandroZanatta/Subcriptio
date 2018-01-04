@@ -15,6 +15,7 @@ class CreateRegistersTable extends Migration
     {
         Schema::create('registers', function (Blueprint $table) {
             $table->increments('id');
+            $table->text('token');
             $table->text('hash');
             $table->timestamps();
         });

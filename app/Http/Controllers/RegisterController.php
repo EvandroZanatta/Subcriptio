@@ -20,7 +20,21 @@ class RegisterController extends Controller
 
         //$file = $request->all();
 
-        return $_FILES;
+        $sha_file = hash_file('sha256',$_FILES['file-send']['tmp_name']);
+        
+        
+        $register = new Registers;
+
+        echo $register->getLastToken();
+
+        return "ok";
+
+        $register->token = '0';
+        $register->hash = $sha_file;
+
+        $register->save();
+
+
     }   
 
     /*
